@@ -1,3 +1,12 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+
+    <h1><span style="color: #f55e00;">{{ nav.getCurrentUser().name }} </span>post your question below...</h1>
+    <p class="lead">Write it down and <span style="color: #f55e00;">find the answer so you can reference it later!</span></p>
+    <!-- <img src="assets/images/yeoman.png" alt="I'm Yeoman"> -->
+  </div>
+</header>
+
 <div class="container">
   <form name="form" ng-submit="submit()">
     <h2>Title:</h2>
@@ -5,6 +14,7 @@
     <span class="text-danger" ng-messages="form.question_title.$error">
       <span ng-message="required">Required</span>
     </span>
+
     <span class="text-success" ng-show="form.question_title.$valid">OK</span>
     <br>
     <h2>Question:</h2>
@@ -12,11 +22,12 @@
     <span class="text-danger" ng-messages="form.question_content.$error">
       <span ng-message="required">Required</span>
     </span>
-    <span class="text-success" ng-show="form.question_content.$valid">OK</span>
+    <div class="text-success alert alert-success" ng-show="form.question_content.$valid" role="alert">Looks OK to post...</div>
+    <!-- <span class="text-success" ng-show="form.question_content.$valid">OK</span> -->
     <h2>Tags:</h2>
     <tags-input ng-model="question.tags">
       <!-- <auto-complete source="loadTags($query)"></auto-complete> -->
     </tags-input>
-    <input type="submit" class="btn btn-primary" ng-disabled="form.$invalid" value="Post question">
+    <input type="submit" class="btn btn-success" ng-disabled="form.$invalid" value="Post question">
   </form>
 </div>

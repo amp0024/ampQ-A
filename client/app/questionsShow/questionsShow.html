@@ -1,5 +1,42 @@
+<header class="hero-unit" id="banner">
+  <div class="container" id="question-show-container">
+    <div style="float: left;font-size: x-large; padding: 0; width: 3em; text-align: center;">
+      <button ng-if=" isStar(question)" type="button" style="background: transparent; border: 0;" ng-click="unstar('')">
+        <span class="glyphicon glyphicon-star" style="color: #CF7C00;" ></span>
+      </button>
+      <button ng-if="!isStar(question)" type="button" style="background: transparent; border: 0;" ng-click="star('')"  >
+        <span class="glyphicon glyphicon-star-empty"></span>
+      </button>
+      <div>{{question.stars.length}}</div>
+    </div>
+    <button ng-if="isOwner(question)" type="button" class="close" ng-click="deleteQuestion()">&times;</button>
+    <h1>{{question.title}}</h1>
+
+    <!-- <img src="assets/images/yeoman.png" alt="I'm Yeoman"> -->
+    <div>
+
+
+    <!-- <div style="float: left;font-size: large; padding: 0; width: 3em; text-align: center;">
+      <button ng-if=" isStar(question)" type="button" style="background: transparent; border: 0;" ng-click="unstar('')">
+        <span class="glyphicon glyphicon-star" style="color: #CF7C00;" ></span>
+      </button>
+      <button ng-if="!isStar(question)" type="button" style="background: transparent; border: 0;" ng-click="star('')"  >
+        <span class="glyphicon glyphicon-star-empty"></span>
+      </button>
+      <div>{{question.stars.length}}</div>
+    </div> -->
+
+
+
+     <br>
+     
+    <p class="lead">Find new answers and continue to add them to this question <span style="color: #005dd6;">so you can reference it later!</span></p>
+  </div>
+  </div>
+</header>
+
 <div class="container" id="question-show-container">
-  <div>
+  <!-- <div>
     <button ng-if="isOwner(question)" type="button" class="close" ng-click="deleteQuestion()">&times;</button>
 
     <div style="float: left;font-size: x-large; padding: 0; width: 2em; text-align: center;">
@@ -26,8 +63,23 @@
         </span>
       </span>
     </div>
-  </div>
-  <hr/>
+  </div> -->
+
+  <br>
+
+  <div>
+  <h4>Question Details:</h4>
+      <h1>
+        <div style="float: left" ng-if="! editting"></div>
+        <input type=text ng-model="question.title" ng-if=" editting">
+      </h1>
+      <p><b>Tags: </b><span ng-repeat="tag in question.tags">
+        <span class="label label-info">
+          {{tag.text}}
+        </span>
+      </span></p>
+    </div>
+    <br>
 
   <pagedown-viewer content="question.content" ng-if="!editting"></pagedown-viewer>
   <pagedown-editor ng-model="question.content" ng-if=" editting"></pagedown-editor>

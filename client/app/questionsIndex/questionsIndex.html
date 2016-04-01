@@ -1,15 +1,16 @@
 <header class="hero-unit" id="banner">
   <div class="container">
-    <h1>paizaQA</h1>
-    <p class="lead">How to make QA sites like this: <a style="color: #c0c0c0;" href="http://engineering.paiza.io/entry/2016/03/10/115345">Building a QA web service in an hour - MEAN stack development(3)</a></p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+    <h1>Hey <span style="color: #449c45;">{{ nav.getCurrentUser().name }}! </span>What's your <span style="color: #449c45;">question?</span></h1>
+    <br>
+    <p class="lead">Write it down and <span style="color: #449c45;">find the answer so you can reference it later!</span></p>
+    <!-- <img src="assets/images/yeoman.png" alt="I'm Yeoman"> -->
   </div>
 </header>
 
 <div class="container" infinite-scroll='nextPage()' infinite-scroll-disabled='busy || noMoreData'>
   <br/>
   <div style="text-align: center">
-    <a type="button" class="btn btn-primary" href="/questions/create">Ask Question</a>
+    <a type="button" class="btn btn-success" href="/questions/create">Post a question...</a>
   </div>
 
   <table class="table table-striped">

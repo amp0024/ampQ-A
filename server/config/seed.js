@@ -49,9 +49,9 @@ User.find({}).removeAsync()
     }, {
       provider: 'local',
       role: 'admin',
-      name: 'Admin',
-      email: 'admin@example.com',
-      password: 'admin'
+      name: 'Adam',
+      email: 'amp0024@gmail.com',
+      password: 'Longmont10261!'
     })
     .then(() => {
       console.log('finished populating users');
